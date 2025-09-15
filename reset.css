@@ -1,0 +1,14 @@
+body {
+  margin: 0;
+  background: #222;
+}
+
+canvas {
+  display: block;
+  width: 100vmin;
+  height: 100vmin;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+}
