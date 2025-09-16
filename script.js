@@ -19,12 +19,11 @@ function makeCanvas(size) {
   const canvas = document.createElement("canvas");
   const ctx = canvas.getContext("2d");
 
-  canvas.width = size;
-  canvas.height = size;
+  canvas.width = canvas.height = size;
   canvas.ctx = ctx;  
   
+  ctx.translate(0, size);
   ctx.scale(unit, -unit);
-  ctx.translate(0, -size / unit);
 
   body.append(canvas);
   
