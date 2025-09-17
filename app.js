@@ -16,4 +16,6 @@ for (
   show.rect(xy, xy, wh, wh, color1);
   show.circle(cxy, cxy, wh / 2.1, color2);
 }
+
+show.polygon([5, 50], [8, 80], [45, 75], 'lime');
   

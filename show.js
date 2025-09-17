@@ -25,4 +25,25 @@ export class Show {
     this.ctx.arc(x, y, r, 0, 2 * Math.PI);
     this.ctx.fill();
   }
+
+  polygon(...args) {
+    const color = args.pop();
+    const coords = args.flat();
+    const points = coords.reduce(
+      (points, coord) => {
+        if (points.at(-1).length > 1) points.push([]);
+        points.at(-1).push(coord);
+        return points;
+      }, [[]]
+    )
+
+    this.ctx.fillStyle = color;
+    this.ctx.beginPath();
+    this.ctx.moveTo(...points.shift());
+
+    for (const [x, y] of points) this.ctx.lineTo(x, y);
+
+    this.ctx.closePath();
+    this.ctx.fill();
+  }
 }
